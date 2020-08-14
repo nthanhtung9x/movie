@@ -10,9 +10,14 @@ function App() {
     <BrowserRouter>
       <div>
         <Header/>
-        <Route path="/home" component={Home}/>
-        <Route path="/login" component={Login}/>
-        <Route path="/register" component={Register}/>
+        <Route exact path="/home" render={() => {
+          return <>
+            <Home/>
+          </>
+        }}/>
+        <Route exact path="/login" component={Login}/>
+        <Route exact path="/register" component={Register}/>
+        <Route exact path="/" component={Home}/>
       </div>
     </BrowserRouter>
   );
