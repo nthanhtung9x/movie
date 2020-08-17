@@ -1,6 +1,7 @@
 import * as type from '../types/QuanLyNguoiDungType';
+import { userLogin } from '../../config/setting';
 const initialState = {
-    nguoiDung: {}
+    nguoiDung: localStorage.getItem(userLogin) ? JSON.parse(localStorage.getItem(userLogin)) : {}
 }
 
 export default (state = initialState, action) => {
